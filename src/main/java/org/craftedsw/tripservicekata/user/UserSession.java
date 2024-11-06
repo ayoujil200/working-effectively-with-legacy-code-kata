@@ -1,20 +1,7 @@
 package org.craftedsw.tripservicekata.user;
 
-import org.craftedsw.tripservicekata.exception.CollaboratorCallException;
+import org.craftedsw.tripservicekata.user.User;
 
-public class UserSession {
-
-    private static final UserSession userSession = new UserSession();
-
-    private UserSession() {
-    }
-
-    public static UserSession getInstance() {
-        return userSession;
-    }
-
-    public User getLoggedUser() {
-       return null;
-    }
-
+public interface UserSession {
+    public User getLoggedUser();
 }
