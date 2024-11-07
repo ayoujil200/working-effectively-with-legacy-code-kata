@@ -20,12 +20,7 @@ public class TripService {
     }
 
     public boolean checkIfUserIsFriend(User user, User loggedUser) {
-        for (User friend : user.getFriends()) {
-            if (friend.equals(loggedUser)) {
-                return true;
-            }
-        }
-        return false;
+        return user.getFriends().stream().anyMatch(friend -> friend.equals(loggedUser));
     }
 
     public List<Trip> getTripsByUser(User user) throws UserNotLoggedInException {
